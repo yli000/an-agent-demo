@@ -1,0 +1,18 @@
+# 项目直接依赖；PyTorch 需匹配本地 CUDA 环境。
+boto3==1.38.2
+fastapi==0.115.12
+Flask==3.1.0
+Flask-SocketIO==5.5.1
+locust==2.36.2
+mcp==1.7.0
+numpy==2.2.4
+openai==1.75.0
+python-socketio==5.13.0
+qqmusic-api-python==0.3.4
+redis==5.2.1
+requests==2.32.3
+scikit-learn==1.6.1
+torch==2.6.0
+tqdm==4.67.1
+transformers==4.51.3
+uvicorn==0.34.1

@@ -1,0 +1,17 @@
+本目录集成旧版 PyTorch BERT 实现，采用 Apache License 2.0。
+
+上游实现与许可证参考：
+https://github.com/huggingface/transformers/tree/v0.6.2/pytorch_pretrained_bert
+
+modeling.py、tokenization.py、optimization.py 的上游版权信息：
+Copyright 2018 The Google AI Language Team Authors and The HuggingFace Inc. team.
+modeling.py 还包含：
+Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
+
+file_utils.py 的上游缓存实现沿用 AllenNLP：
+https://github.com/allenai/allennlp
+Copyright by the AllenNLP authors.
+
+本地集成版本包含配置读取兼容调整；本次整理将普通注释和文档字符串中文化，并规范了源文件格式。上游参考版本用于说明实现和许可来源，不表示本地文件与该版本完全一致。
+
+Apache License 2.0 全文见本目录 LICENSE。
