@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 575" width="1000" height="575" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="575" fill="#ffffff"/>
+
+  <!-- ========== User input, rewrite ========== -->
+  <rect x="20" y="170" width="100" height="88" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="70" y="204" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">User input</text>
+  <text x="70" y="226" font-size="12" fill="#374151" text-anchor="middle">may refer to</text>
+  <text x="70" y="243" font-size="12" fill="#374151" text-anchor="middle">earlier turns</text>
+
+  <rect x="140" y="170" width="120" height="88" rx="8" fill="#eef3fc" stroke="#3b6fd8" stroke-width="1.5"/>
+  <text x="200" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Rewrite</text>
+  <text x="200" y="213" font-size="12" fill="#374151" text-anchor="middle">Fill in missing</text>
+  <text x="200" y="230" font-size="12" fill="#374151" text-anchor="middle">info from context</text>
+  <text x="200" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <line x1="120" y1="214" x2="138" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Split into three flows -->
+  <line x1="260" y1="214" x2="280" y2="214" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="280" y1="80" x2="280" y2="344" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="280" y1="80" x2="298" y2="80" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="214" x2="298" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="344" x2="298" y2="344" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g font-size="11.5" fill="#6b7280">
+    <text x="20" y="296">After rewriting, the three flows</text>
+    <text x="20" y="313">on the right start at once.</text>
+    <text x="20" y="330">Once the intent is decided,</text>
+    <text x="20" y="347">the matching flow's result is used.</text>
+  </g>
+
+  <!-- ========== Top: intent judgment ========== -->
+  <rect x="300" y="36" width="140" height="88" rx="8" fill="#eef3fc" stroke="#3b6fd8" stroke-width="1.5"/>
+  <text x="370" y="60" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Judge intent</text>
+  <text x="370" y="81" font-size="12" fill="#374151" text-anchor="middle">Call a tool or not</text>
+  <text x="370" y="98" font-size="12" fill="#374151" text-anchor="middle">(original input)</text>
+  <text x="370" y="116" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <path d="M440,80 L915,80 L915,146" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="680" y="72" font-size="11.5" fill="#6b7280" text-anchor="middle">decides which flow's result is used</text>
+
+  <!-- ========== Middle: call a tool ========== -->
+  <rect x="300" y="142" width="84" height="20" rx="10" fill="#2e9e6a"/>
+  <text x="342" y="156" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Call a tool</text>
+
+  <rect x="300" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="357" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Classify</text>
+  <text x="357" y="213" font-size="12" fill="#374151" text-anchor="middle">Shortlist likely</text>
+  <text x="357" y="230" font-size="12" fill="#374151" text-anchor="middle">user intents</text>
+  <text x="357" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">BERT</text>
+
+  <rect x="435" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="492" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Pick a tool</text>
+  <text x="492" y="213" font-size="12" fill="#374151" text-anchor="middle">Choose one and</text>
+  <text x="492" y="230" font-size="12" fill="#374151" text-anchor="middle">fill in arguments</text>
+  <text x="492" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <rect x="570" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="627" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Run the tool</text>
+  <text x="627" y="213" font-size="12" fill="#374151" text-anchor="middle">e.g. weather,</text>
+  <text x="627" y="230" font-size="12" fill="#374151" text-anchor="middle">time, songs</text>
+  <text x="627" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">MCP · functions</text>
+
+  <rect x="705" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="762" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Answer</text>
+  <text x="762" y="213" font-size="12" fill="#374151" text-anchor="middle">using what the</text>
+  <text x="762" y="230" font-size="12" fill="#374151" text-anchor="middle">tool returned</text>
+  <text x="762" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM · template</text>
+
+  <line x1="415" y1="214" x2="433" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="214" x2="568" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="685" y1="214" x2="703" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="214" x2="848" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ========== Bottom: chat or decline ========== -->
+  <rect x="300" y="272" width="112" height="20" rx="10" fill="#d9822b"/>
+  <text x="356" y="286" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Chat or decline</text>
+
+  <rect x="300" y="300" width="140" height="88" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="370" y="322" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Decline?</text>
+  <text x="370" y="343" font-size="12" fill="#374151" text-anchor="middle">Classifier decides,</text>
+  <text x="370" y="360" font-size="12" fill="#374151" text-anchor="middle">except follow-ups</text>
+  <text x="370" y="379" font-size="11.5" fill="#6b7280" text-anchor="middle">BERT-tiny + LLM</text>
+
+  <rect x="470" y="300" width="350" height="40" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="488" y="325" font-size="14.5" font-weight="700" fill="#111827">Chat</text>
+  <text x="532" y="325" font-size="12.5" fill="#374151">if not declined, stream the reply</text>
+  <text x="806" y="325" font-size="11.5" fill="#6b7280" text-anchor="end">LLM</text>
+
+  <rect x="470" y="348" width="350" height="40" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="488" y="373" font-size="14.5" font-weight="700" fill="#111827">Decline</text>
+  <text x="552" y="373" font-size="12.5" fill="#374151">otherwise</text>
+
+  <path d="M440,344 L455,344 L455,320 L468,320" fill="none" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M455,344 L455,368 L468,368" fill="none" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="320" x2="848" y2="320" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="368" x2="848" y2="368" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ========== Pick result ========== -->
+  <rect x="850" y="148" width="130" height="240" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="915" y="236" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Pick result</text>
+  <g font-size="12" fill="#374151" text-anchor="middle">
+    <text x="915" y="260">Tool needed:</text>
+    <text x="915" y="277">use its result.</text>
+    <text x="915" y="298">Otherwise: chat</text>
+    <text x="915" y="315">or decline.</text>
+  </g>
+
+  <!-- ========== Example ========== -->
+  <text x="20" y="428" font-size="12" font-weight="700" fill="#6b7280">Example: turn 2 of a conversation (turn 1 asked for the time in Tokyo)</text>
+  <g font-size="12" fill="#374151">
+    <rect x="20" y="438" width="100" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="28" y="460">What about</text>
+    <text x="28" y="478">London?</text>
+
+    <rect x="140" y="438" width="120" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="148" y="460">What time is it</text>
+    <text x="148" y="478">in London?</text>
+
+    <rect x="300" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="308" y="460">1. time</text>
+    <text x="308" y="478">2. timezone</text>
+    <text x="308" y="496">…</text>
+
+    <rect x="435" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="443" y="460">Tool: time</text>
+    <text x="443" y="478">Argument:</text>
+    <text x="443" y="496">location=London</text>
+
+    <rect x="570" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="578" y="460">Tool returns:</text>
+    <text x="578" y="478">London 15:30:20</text>
+
+    <rect x="705" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="712" y="460" font-size="11">It is 15:30:20 on</text>
+    <text x="712" y="478" font-size="11">Friday, 2026-10-16</text>
+    <text x="712" y="496" font-size="11">in London.</text>
+
+    <rect x="850" y="438" width="130" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="858" y="460">Tool needed,</text>
+    <text x="858" y="478">so use the tool's</text>
+    <text x="858" y="496">result</text>
+  </g>
+
+  <text x="980" y="560" font-size="11.5" fill="#6b7280" text-anchor="end">The last gray line in each box is the model or tool used here and can be swapped; numbers in the example are illustrative</text>
+</svg>

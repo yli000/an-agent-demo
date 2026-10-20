@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 575" width="1000" height="575" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Noto Sans SC',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="575" fill="#ffffff"/>
+
+  <!-- ========== 用户输入、改写 ========== -->
+  <rect x="20" y="170" width="100" height="88" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="70" y="208" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">用户输入</text>
+  <text x="70" y="231" font-size="12" fill="#374151" text-anchor="middle">可以接着上文说</text>
+
+  <rect x="140" y="170" width="120" height="88" rx="8" fill="#eef3fc" stroke="#3b6fd8" stroke-width="1.5"/>
+  <text x="200" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">改写</text>
+  <text x="200" y="213" font-size="12.5" fill="#374151" text-anchor="middle">如有缺失或指代，</text>
+  <text x="200" y="230" font-size="12.5" fill="#374151" text-anchor="middle">结合上文补充</text>
+  <text x="200" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <line x1="120" y1="214" x2="138" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 分成三个流程 -->
+  <line x1="260" y1="214" x2="280" y2="214" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="280" y1="80" x2="280" y2="344" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="280" y1="80" x2="298" y2="80" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="214" x2="298" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="344" x2="298" y2="344" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g font-size="11.5" fill="#6b7280">
+    <text x="20" y="296">改写后，右边三个流程同时开始；</text>
+    <text x="20" y="313">判定用户意图后，</text>
+    <text x="20" y="330">选用对应流程的结果</text>
+  </g>
+
+  <!-- ========== 上：意图判断 ========== -->
+  <rect x="300" y="36" width="140" height="88" rx="8" fill="#eef3fc" stroke="#3b6fd8" stroke-width="1.5"/>
+  <text x="370" y="60" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">意图判断</text>
+  <text x="370" y="81" font-size="12.5" fill="#374151" text-anchor="middle">要不要调用工具</text>
+  <text x="370" y="98" font-size="12" fill="#374151" text-anchor="middle">（用改写前的输入）</text>
+  <text x="370" y="116" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <path d="M440,80 L915,80 L915,146" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="680" y="72" font-size="11.5" fill="#6b7280" text-anchor="middle">决定选用哪个流程的结果</text>
+
+  <!-- ========== 中：调用工具 ========== -->
+  <rect x="300" y="142" width="72" height="20" rx="10" fill="#2e9e6a"/>
+  <text x="336" y="156" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">调用工具</text>
+
+  <rect x="300" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="357" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">意图分类</text>
+  <text x="357" y="213" font-size="12" fill="#374151" text-anchor="middle">初步判断用户</text>
+  <text x="357" y="230" font-size="12" fill="#374151" text-anchor="middle">最可能的几个意图</text>
+  <text x="357" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">BERT</text>
+
+  <rect x="435" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="492" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">选工具</text>
+  <text x="492" y="213" font-size="12" fill="#374151" text-anchor="middle">从对应的工具里</text>
+  <text x="492" y="230" font-size="12" fill="#374151" text-anchor="middle">选一个，填好参数</text>
+  <text x="492" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM</text>
+
+  <rect x="570" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="627" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">执行工具</text>
+  <text x="627" y="213" font-size="12" fill="#374151" text-anchor="middle">如查天气、</text>
+  <text x="627" y="230" font-size="12" fill="#374151" text-anchor="middle">查时间、搜歌</text>
+  <text x="627" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">MCP · 本地函数</text>
+
+  <rect x="705" y="170" width="115" height="88" rx="8" fill="#eaf6f0" stroke="#2e9e6a" stroke-width="1.5"/>
+  <text x="762" y="192" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">回答</text>
+  <text x="762" y="213" font-size="12" fill="#374151" text-anchor="middle">结合工具</text>
+  <text x="762" y="230" font-size="12" fill="#374151" text-anchor="middle">返回的信息</text>
+  <text x="762" y="249" font-size="11.5" fill="#6b7280" text-anchor="middle">LLM · 模板</text>
+
+  <line x1="415" y1="214" x2="433" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="214" x2="568" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="685" y1="214" x2="703" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="214" x2="848" y2="214" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ========== 下：聊天或拒绝 ========== -->
+  <rect x="300" y="272" width="84" height="20" rx="10" fill="#d9822b"/>
+  <text x="342" y="286" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">聊天或拒绝</text>
+
+  <rect x="300" y="300" width="140" height="88" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="370" y="322" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">是否拒绝</text>
+  <text x="370" y="343" font-size="12" fill="#374151" text-anchor="middle">分类模型初步判断；</text>
+  <text x="370" y="360" font-size="12" fill="#374151" text-anchor="middle">和上一句相关时不拒绝</text>
+  <text x="370" y="379" font-size="11.5" fill="#6b7280" text-anchor="middle">BERT-tiny + LLM</text>
+
+  <rect x="470" y="300" width="350" height="40" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="488" y="325" font-size="14.5" font-weight="700" fill="#111827">聊天</text>
+  <text x="532" y="325" font-size="12.5" fill="#374151">不拒绝时，边生成边输出</text>
+  <text x="806" y="325" font-size="11.5" fill="#6b7280" text-anchor="end">LLM</text>
+
+  <rect x="470" y="348" width="350" height="40" rx="8" fill="#fbf1e6" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="488" y="373" font-size="14.5" font-weight="700" fill="#111827">拒绝回答</text>
+  <text x="562" y="373" font-size="12.5" fill="#374151">要拒绝时</text>
+
+  <path d="M440,344 L455,344 L455,320 L468,320" fill="none" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M455,344 L455,368 L468,368" fill="none" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="320" x2="848" y2="320" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="820" y1="368" x2="848" y2="368" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ========== 选用结果 ========== -->
+  <rect x="850" y="148" width="130" height="240" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="915" y="236" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">选用结果</text>
+  <g font-size="12" fill="#374151" text-anchor="middle">
+    <text x="915" y="260">要调用工具：</text>
+    <text x="915" y="277">用调用工具的结果；</text>
+    <text x="915" y="298">否则：用聊天或</text>
+    <text x="915" y="315">拒绝回答的结果</text>
+  </g>
+
+  <!-- ========== 示例 ========== -->
+  <text x="20" y="428" font-size="12" font-weight="700" fill="#6b7280">示例：多轮对话的第 2 轮（上一轮问了东京时间）</text>
+  <g font-size="12" fill="#374151">
+    <rect x="20" y="438" width="100" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="28" y="460">What about</text>
+    <text x="28" y="478">London?</text>
+
+    <rect x="140" y="438" width="120" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="148" y="460">What time is it</text>
+    <text x="148" y="478">in London?</text>
+
+    <rect x="300" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="308" y="460">1. time（查时间）</text>
+    <text x="308" y="478">2. timezone</text>
+    <text x="308" y="496">…</text>
+
+    <rect x="435" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="443" y="460">选中：查时间</text>
+    <text x="443" y="478">参数：</text>
+    <text x="443" y="496">地点 = London</text>
+
+    <rect x="570" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="578" y="460">工具返回：</text>
+    <text x="578" y="478">伦敦 15:30:20</text>
+
+    <rect x="705" y="438" width="115" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="712" y="460" font-size="11">It is 15:30:20 on</text>
+    <text x="712" y="478" font-size="11">Friday, 2026-10-16</text>
+    <text x="712" y="496" font-size="11">in London.</text>
+
+    <rect x="850" y="438" width="130" height="80" rx="6" fill="#fafafa" stroke="#d1d5db" stroke-dasharray="4 3"/>
+    <text x="858" y="460">意图判断：要调用</text>
+    <text x="858" y="478">工具，用工具的结果</text>
+  </g>
+
+  <text x="980" y="560" font-size="11.5" fill="#6b7280" text-anchor="end">框内最后一行灰字为本项目选用的模型或工具，可替换；示例中的数字为示意</text>
+</svg>
